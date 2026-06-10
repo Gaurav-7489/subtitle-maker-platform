@@ -1,0 +1,74 @@
+What is  {Time Complexity}?
+
+{Time Complexity} is {NOT} the actual time your computer takes to run a program.
+
+Because same code might take:
+
+• {5 seconds} on an old computer
+
+• {2 seconds} on a new MacBook
+
+Thus, Time Complexity is the {rate} at which the time taken {grows} as the {input size} increases.
+
+The more the {steps} taken in a program the more will be {Time Complexity}
+
+Again, we don't measure time in {seconds} or {minutes}?
+
+Cause, Time Complexity { does not} depend on:
+
+{CPU speed}
+
+{ RAM}
+
+{ Compiler}
+
+{ Programming Language}
+
+{ Operating System}
+
+we are measuring the time of the {code} not the {Machine}
+
+That's where {BigO-Notation} comes in help.
+
+{Big O} tells us how efficiently a program scales when the input becomes larger.
+
+Big O is a measure of {growth rate}
+
+
+Examples:
+
+ if our code runs in { 1} operation, we say {TC} 
+
+• {O(1)} → Constant time 
+
+•if it took 10 operations to run so we say {O(10)} 
+
+• and if it took n number operation to run the program  {O(n)}.
+
+{Space Complexity}
+
+{Space Complexity} measures how much memory a program needs to run that program.
+
+It consists of two kind of spaces,
+
+
+ { Auxiliary space} and 
+{Input Space}
+
+1. { Auxiliary Space}
+   Extra memory used to solve the problem.
+
+   Examples: temporary variables, arrays, result storage.
+
+c = a + b 
+, so c here is {Auxiliary space}
+
+
+2. {Input Space}
+   Memory required to store the input itself.
+
+c = a + b 
+, a and b here is the {Input Space}
+
+
+done

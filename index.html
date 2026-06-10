@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reel Studio Pro — 3D Caption Editor</title>
+    <meta name="description" content="Professional 3D reel caption editor with live preview, studio lighting, and cinematic animations.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <span class="logo-text">Reel Studio</span>
+        </div>
+
+        <!-- SCRIPT -->
+        <section class="panel">
+            <h3>Script</h3>
+            <textarea id="scriptInput" placeholder="Paste your reel script here...">
+Time Complexity sounds {SCARY}
+
+But it's actually simple
+
+O(1) is constant
+
+O(n) is linear
+
+Follow for Day 3
+            </textarea>
+            <button id="loadScriptBtn">⚡ Load Script</button>
+        </section>
+
+        <!-- STYLE -->
+        <div class="sidebar-section-title">Style</div>
+
+        <section class="panel">
+            <h3>Caption Mode</h3>
+            <select id="captionMode">
+                <option value="headline">Headline Mode</option>
+                <option value="subtitle">Subtitle Mode</option>
+                <option value="tiktok">TikTok Word Mode</option>
+                <option value="teleprompter">Teleprompter</option>
+            </select>
+        </section>
+
+        <section class="panel">
+            <h3>Animation</h3>
+            <select id="animationMode">
+                <option value="fade">Fade + Blur</option>
+                <option value="zoom">3D Zoom</option>
+                <option value="slide">3D Slide Up</option>
+                <option value="bounce">3D Bounce</option>
+                <option value="flip">3D Flip</option>
+                <option value="typewriter">Typewriter</option>
+            </select>
+        </section>
+
+        <!-- TYPOGRAPHY -->
+        <div class="sidebar-section-title">Typography</div>
+
+        <section class="panel">
+            <h3>Font Family</h3>
+            <select id="fontSelect">
+                <option value="Outfit">Outfit</option>
+                <option value="Inter">Inter</option>
+                <option value="Poppins">Poppins</option>
+                <option value="Montserrat">Montserrat</option>
+                <option value="Bebas Neue">Bebas Neue</option>
+            </select>
+        </section>
+
+        <section class="panel">
+            <h3>Text Size</h3>
+            <input type="range" min="30" max="120" value="70" id="textSize">
+            <h3>Playback Speed</h3>
+            <input type="range" min="1" max="10" value="3" id="speedControl">
+        </section>
+
+        <!-- FRAME DIMENSIONS -->
+        <div class="sidebar-section-title">Frame Dimensions</div>
+
+        <section class="panel">
+            <h3>Width <span id="frameWidthVal" class="range-val">480px</span></h3>
+            <input type="range" min="280" max="800" value="480" id="frameWidth">
+            <h3>Height <span id="frameHeightVal" class="range-val">854px</span></h3>
+            <input type="range" min="400" max="1200" value="854" id="frameHeight">
+            <h3>Border Radius <span id="frameRadiusVal" class="range-val">38px</span></h3>
+            <input type="range" min="0" max="80" value="38" id="frameRadius">
+        </section>
+
+        <!-- LAYOUT -->
+        <div class="sidebar-section-title">Layout</div>
+
+        <section class="panel">
+            <h3>Caption Position</h3>
+            <select id="captionPosition">
+                <option value="top">Top</option>
+                <option value="center" selected>Center</option>
+                <option value="bottom">Bottom</option>
+            </select>
+        </section>
+
+        <section class="panel">
+            <h3>Background</h3>
+            <select id="backgroundMode">
+                <option value="black">Solid Black</option>
+                <option value="gradient">Animated Gradient</option>
+                <option value="image">Image Upload</option>
+                <option value="video">Video Upload</option>
+            </select>
+            <input type="file" id="backgroundUpload" accept="image/*,video/*">
+        </section>
+
+
+
+        <!-- OPTIONS -->
+        <div class="sidebar-section-title">Options</div>
+
+        <section class="panel">
+            <label><input type="checkbox" id="wordHighlight" checked> Highlight Keywords</label>
+            <label><input type="checkbox" id="showProgress" checked> Progress Bar</label>
+            <label><input type="checkbox" id="autoPlay"> Auto Play</label>
+            <label><input type="checkbox" id="enable3D" checked> 3D Effects</label>
+        </section>
+
+        <!-- CONTROLS -->
+        <div class="sidebar-section-title">Controls</div>
+
+        <section class="panel">
+            <div class="btn-row">
+                <button id="playBtn">▶ Play</button>
+                <button id="pauseBtn">⏸ Pause</button>
+            </div>
+            <div class="btn-row">
+                <button id="recordModeBtn">● Record</button>
+                <button id="fullscreenBtn">⛶ Fullscreen</button>
+            </div>
+        </section>
+
+    </aside>
+
+    <!-- MAIN PREVIEW -->
+    <main class="workspace">
+
+        <div class="stage-3d">
+
+            <div class="phone-frame" id="phoneFrame">
+
+                <div id="backgroundLayer"></div>
+
+
+
+                <div class="progress-bar" id="progressBar"></div>
+
+                <div class="counter" id="counter">1 / 1</div>
+
+                <div class="caption-container center" id="captionContainer">
+                    <div id="captionText" class="caption-text">
+                        Reel Studio
+                    </div>
+                </div>
+
+                <div class="preview-controls">
+                    <button id="prevBtn">◀</button>
+                    <button id="nextBtn">▶</button>
+                </div>
+
+            </div>
+
+            <!-- Floor glow -->
+            <div class="floor-glow"></div>
+
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
